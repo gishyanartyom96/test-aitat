@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RfmSegments\RfmSegmentsIndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('/rfm-segments')->group(function () {
+    Route::get('/', RfmSegmentsIndexController::class);
 });
